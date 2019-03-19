@@ -9,4 +9,8 @@ class Rating extends Model {
 	public function users() {
 		return $this->belongsOne('App\User');
 	}
+	public function restaurant() {
+		return $this->belongsOne('App\Restaurant');
+	}
+	protected $fillable = array('rating');
 }

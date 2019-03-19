@@ -1,6 +1,6 @@
 @extends('frontend.layout.admin.master')
 @section('contentadmin')
-<table style="margin: 50px 500px;">
+<table style="margin: 50px 500px;" border="1">
 	<a href="{{route('create.Category')}}">Create</a>
 	<thead>
 		<tr>
@@ -15,6 +15,8 @@
 			<td>
 				{{$ca->name}}
 			</td>
+			<td><a href="#">sửa</a></td>
+			<td><a href="#">xóa</a></td>
 		</tr>
 		@endforeach
 	</tbody>

@@ -1,6 +1,6 @@
 @extends('frontend.layout.admin.master')
 @section('contentadmin')
-<table>
+<table border="1">
 	<a href="{{route('create.Restaurant')}}">Create</a>
 	<thead>
 		<tr>
@@ -18,7 +18,7 @@
 	<tbody>
 		@foreach($restaurant as $res)
 		<tr>
-			<td></td>
+			<td>{{$res->Category->name}}</td>
 			<td>{{$res->name}}</td>
 			<td>{{$res->description}}</td>
 			<td>{{$res->phone}}</td>
@@ -27,6 +27,8 @@
 			<td>
 				<img src="{{ asset('storage/'.$res->image) }}"  style="width: 100px;">
 			</td>
+			<td><a href="#"></a></td>
+			<td><a href="#"></a></td>
 		</tr>
 		@endforeach
 	</tbody>

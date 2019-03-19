@@ -19,12 +19,6 @@ class AddTable extends Migration {
 			$table->unsignedInteger('user_id')->after('id')->nullable();
 			$table->foreign('user_id')->references('id')->on('users');
 		});
-
-		Schema::table('users', function (Blueprint $table) {
-			$table->unsignedInteger('rating_id')->after('id')->nullable();
-			$table->foreign('rating_id')->references('id')->on('ratings');
-		});
-
 	}
 
 	/**

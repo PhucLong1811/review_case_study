@@ -2,86 +2,75 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Restaurant;
 use App\Slide;
 use Auth;
-use App\Category;
-use App\Restaurant;
-class pageController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $category = Category::all();
-        $slide = Slide::all();
-        $restaurant = Restaurant::all();
-        return view('page.user.home', compact('slide', 'category','restaurant'));
-    }
+use Illuminate\Http\Request;
 
-    
-    public function homeadmin()
-    {
-        return redirect()->route('list.Register');
-    }
+class pageController extends Controller {
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index() {
+		$slide = Slide::all();
+		$restaurant = Restaurant::all();
+		return view('page.user.home', compact('slide', 'restaurant'));
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function LogoutUser()
-    {
-        Auth::logout();
-         return redirect()->route('home');
-    }
+	public function homeadmin() {
+		return redirect()->route('list.Register');
+	}
 
-    public function search(Request $request)
-    {
-        $product = Restaurant::where('name','like','%'.$request->key.'%')->get();
-        return view('page.user.search',compact('product'));
-    }
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function LogoutUser() {
+		Auth::logout();
+		return redirect()->route('home');
+	}
 
-    public function show($id)
-    {
-        //
-    }
+	public function search(Request $request) {
+		$product = Restaurant::where('name', 'like', '%' . $request->key . '%')->get();
+		return view('page.user.search', compact('product'));
+	}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+	public function show($id) {
+		//
+	}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id) {
+		//
+	}
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(Request $request, $id) {
+		//
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy($id) {
+		//
+	}
 }
