@@ -51,4 +51,11 @@
 	</div> <!-- #content -->
 </div> <!-- .container -->
 <div class="space40">&nbsp;</div>
+<<<<<<< HEAD
+=======
+<div class="well">
+	@include('page.action_admin.comment.create')
+</div>
+
+>>>>>>> 7069182f03ac4d76c3eb4ce18c3253a98d21b458
 @endsection

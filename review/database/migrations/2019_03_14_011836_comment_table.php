@@ -16,7 +16,7 @@ class CommentTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('content');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

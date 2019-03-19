@@ -18,7 +18,7 @@
 
  <!--  Light Bootstrap Table core CSS    -->
  <link href="/light-bootstrap-dashboard-master/assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
-
+ <link rel="stylesheet" title="style" href="/source/assets/dest/css/style.css">
 
  <!--  CSS for Demo Purpose, don't include it in your project     -->
  <link href="/light-bootstrap-dashboard-master/assets/css/demo.css" rel="stylesheet" />
@@ -36,11 +36,11 @@
       <div class="sidebar-wrapper">
         <div class="logo">
           @if(Auth::check())
-         <a href="http://www.creative-tim.com" class="simple-text">
+          <a href="http://www.creative-tim.com" class="simple-text">
             {{Auth::user()->image}}
           </a>
         </div>
-          @endif
+        @endif
         <!-- Phần sửa link -->
         <ul class="nav">
           <li>
@@ -68,9 +68,9 @@
             </a>
           </li>
           <li>
-            <a href="#">
-              <i class="pe-7s-map-marker"></i>
-              <p>Maps</p>
+            <a href="{{route('list.Comment')}}">
+              <i class="pe-7s-comment"></i>
+              <p>Comment</p>
             </a>
           </li>
           <li>
@@ -99,7 +99,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{route('home')}}">Home</a>
+            <a class="navbar-brand" href="{{route('home')}}"><span class="pe-7s-home"></span>Home</a>
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -164,7 +164,7 @@
            </li>
          </ul>
        </nav>
-       <p class="copyright pull-right">
+       <p class=" pull-right">
         &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
       </p>
     </div>
@@ -191,19 +191,11 @@
 <script src="/light-bootstrap-dashboard-master/assets/js/demo.js"></script>
 
 <script type="text/javascript">
- $(document).ready(function(){
-
+  $(document).ready(function(){
    demo.initChartist();
-
    $.notify({
-     icon: 'pe-7s-gift',
-     message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
-   },{
-    type: 'info',
-    timer: 4000
+    icon: 'pe-7s-gift',message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."},{type: 'info',timer: 4000
   });
-
  });
 </script>
 </body>
