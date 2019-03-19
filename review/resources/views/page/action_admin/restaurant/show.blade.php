@@ -25,13 +25,37 @@
 					<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
 					<div class="clearfix"></div>
 				</div>
+				<form method="post" >
+					@csrf
+					<div class="card">
+						<div class="container-fliud">
+							<div class="wrapper row">
+
+								<div class="details col-md-6">
+
+									<div class="rating">
+										<input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1"  data-size="xs">
+
+										<button type="submit" class="btn btn-success">Submit Review</button>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
 			</div>
-		</div>		
+		</div>
 	</div> <!-- #content -->
 </div> <!-- .container -->
 <div class="space40">&nbsp;</div>
+<<<<<<< HEAD
+=======
 <div class="well">
 	@include('page.action_admin.comment.create')
 </div>
 
+>>>>>>> 7069182f03ac4d76c3eb4ce18c3253a98d21b458
 @endsection

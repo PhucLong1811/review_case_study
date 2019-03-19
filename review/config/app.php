@@ -174,7 +174,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+<<<<<<< HEAD
+        willvincent\Rateable\RateableServiceProvider::class,
+=======
         /*willvincent\Rateable\RateableServiceProvider::class,*/
+>>>>>>> 7069182f03ac4d76c3eb4ce18c3253a98d21b458
 
     ],
 
