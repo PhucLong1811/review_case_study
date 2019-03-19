@@ -29,5 +29,9 @@
 		</div>		
 	</div> <!-- #content -->
 </div> <!-- .container -->
-<div class="space40">&nbsp;</div>	
+<div class="space40">&nbsp;</div>
+<div class="well">
+	@include('page.action_admin.comment.create')
+</div>
+
 @endsection

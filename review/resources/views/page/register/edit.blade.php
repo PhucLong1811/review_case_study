@@ -1,27 +1,14 @@
 @extends('frontend.layout.admin.master')
 @section('contentadmin')
-<div class="inner-header">
-	<div class="container">
-		<div class="pull-left">
-			<h6 class="inner-title">Đăng kí</h6>
-		</div>
-		<div class="pull-right">
-			<div class="beta-breadcrumb">
-				<a href="{{route('list.Register')}}">&larr; Come Back</a> / <span>Đăng kí</span>
-			</div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
+<a href="{{route('list.Register')}}">&larr; Come Back</a>
 <div class="container">
 	<div id="content">
-
 		<form action="{{route('update.Register', $user->id)}}" method="post" class="beta-form-checkout" enctype="multipart/form-data">
 			@csrf
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-sm-2">
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-7">
 					@if(count($errors) > 0)
 					<div>
 						<ul class="alert-dark">
