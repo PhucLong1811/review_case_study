@@ -24,7 +24,14 @@ class AddTable extends Migration {
 			$table->unsignedInteger('rating_id')->after('id')->nullable();
 			$table->foreign('rating_id')->references('id')->on('ratings');
 		});
-
+		Schema::table('comments', function (Blueprint $table) {
+			$table->unsignedInteger('restaurant_id')->after('id')->nullable();
+			$table->foreign('restaurant_id')->references('id')->on('restaurants');
+		});
+		Schema::table('ratings', function (Blueprint $table) {
+			$table->unsignedInteger('restaurant_id')->after('id')->nullable();
+			$table->foreign('restaurant_id')->references('id')->on('restaurants');
+		});
 	}
 
 	/**

@@ -13,4 +13,5 @@ class Restaurant extends Model {
 	public function users() {
 		return $this->belongsMany('App\User');
 	}
+	
 }

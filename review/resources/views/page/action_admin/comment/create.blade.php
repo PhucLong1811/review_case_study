@@ -1,5 +1,4 @@
-
-<h5>Viết bình luận ... <span class="glyphicon glyphicon-pencill"></span></h5>
+<h5>Viết bình luận ... <span class="glyphicon glyphicon-pencil"></span></h5>
 <form action="{{route('post.Comment')}}" method="post" accept-charset="utf-8">
 	@csrf
 	<div class="form-group">
