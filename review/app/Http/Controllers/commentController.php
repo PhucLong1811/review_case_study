@@ -8,36 +8,33 @@ use App\Comment;
 
 use App\User;
 
+use App\Restaurant;
+
+use Auth;
+
 class commentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function listComment()
     {
         $comment = Comment::all();
 
-        return view('page.action_admin.comment.list',compact('comment'));
+        return view('page.action_admin.restaurant.show',compact('comment'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function createComment()
     {
         return view('page.action_admin.restaurant.show');
     }
 
-    public function postComment(Request $request)
+    public function postComment(Request $request,$id)
     {
-        $comment = new Comment;
-        $comment->content = $request->content;
-        $comment->save();
-        return redirect()->route('list.Comment');
+        $idrestaurant = $id;
+        $restaurant = Restaurant::find($id);
+        $comments->restaurant_id = $idrestaurant;
+        $comments->user_id = Auth()->user()->id;   
+        $comments->content = $request->comment;
+        $comments->save();
+        return redirect()->with('thongbao','thành công'); 
     }
 
     /**

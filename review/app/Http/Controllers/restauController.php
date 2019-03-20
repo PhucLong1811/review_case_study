@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Comment;
 use App\Category;
 use App\Rating;
 use App\Restaurant;
@@ -40,20 +40,26 @@ class restauController extends Controller {
 		return redirect()->route('list.Restaurant');
 	}
 
+
 	public function showRest($id) {
 		$product = Restaurant::find($id);
 		return view('page.action_admin.restaurant.show', compact('product'));
 	}
 
-	public function postPost(Request $request, $id) {
+	public function postPost(Request $request, $id)
+	{
 		request()->validate(['rate' => 'required']);
 		$restaurant = Restaurant::find($request->id);
 		$rating = new \willvincent\Rateable\Rating;
 		$rating->rating = $request->rate;
-		$rating->user_id = auth()->user()->id;
+		$rating->user_id = Auth()->user()->id;
 		$rating->restaurant_id = $request->id;
 		$restaurant->ratings()->save($rating);
 
 		return redirect()->back();
 	}
+
+	
+
+
 }

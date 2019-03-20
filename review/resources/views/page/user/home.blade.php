@@ -43,7 +43,7 @@
                             <div class="col-sm-3">
                                 <div class="single-item">
                                     <div class="single-item-header">
-                                        <a href="product.html"><img src="{{ asset('storage/'.$res->image) }}" alt=""></a>
+                                        <a href="{{route('show.Restaurant',$res->id)}}"><img src="{{ asset('storage/'.$res->image) }}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$res->name}}</p>
@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
 
-                                <div class="container">
+                                <!-- <div class="container">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
@@ -70,12 +70,12 @@
                                                         <th width="400px">Star</th>
                                                         <th width="100px">View</th>
                                                     </div>
-
+                                
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <script type="text/javascript">
                                     $("#input-id").rating();
                                 </script>

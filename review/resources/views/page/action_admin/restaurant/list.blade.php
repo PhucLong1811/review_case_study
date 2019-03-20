@@ -1,41 +1,5 @@
 @extends('frontend.layout.admin.master')
 @section('contentadmin')
-<<<<<<< HEAD
-<table border="1">
-	<a href="{{route('create.Restaurant')}}">Create</a>
-	<thead>
-		<tr>
-			<th>category</th>
-			<th>name</th>
-			<th>description</th>
-			<th>phone</th>
-			<th>address</th>
-			<th>status</th>
-			<th>image</th>
-			<th>Sửa</th>
-			<th>Xóa</th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach($restaurant as $res)
-		<tr>
-			<td>{{$res->Category->name}}</td>
-			<td>{{$res->name}}</td>
-			<td>{{$res->description}}</td>
-			<td>{{$res->phone}}</td>
-			<td>{{$res->address}}</td>
-			<td>{{$res->status}}</td>
-			<td>
-				<img src="{{ asset('storage/'.$res->image) }}"  style="width: 100px;">
-			</td>
-			<td><a href="#"></a></td>
-			<td><a href="#"></a></td>
-		</tr>
-		@endforeach
-	</tbody>
-</table>
-@stop
-=======
 <div class="container">
 	<div class="row col-md-11 col-md-offset-0 custyle">
 		<table class="table table-striped custab">
@@ -63,7 +27,7 @@
 					<td class="text-center">{{$res->address}}</td>
 					<td class="text-center">{{$res->status}}</td>
 					<td class="text-center">
-						<img src="{{ asset('storage/'.$res->image) }}" >
+						<img src="{{ asset('storage/'.$res->image) }}" width="100px" >
 					</td>
 					<td class="text-center"><a href="{{route('edit.Register' , $res->id) }}" class="btn btn-success text-center"><span class="pe-7s-pen"></span></a></td>
 					<td class="text-center"><a href="{{route('delete.Register' , $res->id) }}" class="btn btn-danger text-center"><span class="pe-7s-trash"></span></a></td>
@@ -75,4 +39,4 @@
 </div>
 
 @stop
->>>>>>> 7069182f03ac4d76c3eb4ce18c3253a98d21b458
+
