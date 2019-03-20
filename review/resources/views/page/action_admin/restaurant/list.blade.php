@@ -1,6 +1,6 @@
 @extends('frontend.layout.admin.master')
 @section('contentadmin')
-<<<<<<< HEAD
+
 <table border="1">
 	<a href="{{route('create.Restaurant')}}">Create</a>
 	<thead>
@@ -28,14 +28,13 @@
 			<td>
 				<img src="{{ asset('storage/'.$res->image) }}"  style="width: 100px;">
 			</td>
-			<td><a href="#"></a></td>
-			<td><a href="#"></a></td>
+			<td><a href="#"></a>edit</td>
+			<td><a href="#"></a>delete</td>
 		</tr>
 		@endforeach
 	</tbody>
 </table>
-@stop
-=======
+
 <div class="container">
 	<div class="row col-md-11 col-md-offset-0 custyle">
 		<table class="table table-striped custab">
@@ -75,4 +74,4 @@
 </div>
 
 @stop
->>>>>>> 7069182f03ac4d76c3eb4ce18c3253a98d21b458
+

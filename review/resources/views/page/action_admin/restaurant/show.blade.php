@@ -25,7 +25,7 @@
 					<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
 					<div class="clearfix"></div>
 				</div>
-				<form method="post" >
+				<form method="post" action="{{route('post.rating')}}" >
 					@csrf
 					<div class="card">
 						<div class="container-fliud">
@@ -51,11 +51,24 @@
 	</div> <!-- #content -->
 </div> <!-- .container -->
 <div class="space40">&nbsp;</div>
-<<<<<<< HEAD
-=======
+
+
 <div class="well">
 	@include('page.action_admin.comment.create')
 </div>
+@foreach($product->comments as $comment)
+<table border="1">
 
->>>>>>> 7069182f03ac4d76c3eb4ce18c3253a98d21b458
+	<tr>
+		<th>{{$comment->users->name}}</th>
+	</tr>
+	<tr>
+		<td>{{$comment->content}}</td>
+	</tr>
+
+
+</table>
+@endforeach
+
+
 @endsection

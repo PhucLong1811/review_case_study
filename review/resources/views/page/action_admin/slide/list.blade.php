@@ -4,7 +4,7 @@
 	<div class="row col-md-9 col-md-offset-1 custyle">
 		<table class="table table-striped custab">
 			<thead>
-				<a href="{{route('create.Register')}}" class="btn btn-primary btn-xs pull-right"><b>+</b> create</a>
+				<a href="{{route('create.Slide')}}" class="btn btn-primary btn-xs pull-right"><b>+</b> create</a>
 				<tr>
 					<th class="text-center">Ảnh</th>
 					<th class="text-center">Sửa</th>

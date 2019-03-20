@@ -45,14 +45,16 @@ class restauController extends Controller {
 		return view('page.action_admin.restaurant.show', compact('product'));
 	}
 
-	public function postPost(Request $request, $id) {
+	public function postPost(Request $request) {
 		request()->validate(['rate' => 'required']);
-		$restaurant = Restaurant::find($request->id);
-		$rating = new \willvincent\Rateable\Rating;
-		$rating->rating = $request->rate;
-		$rating->user_id = auth()->user()->id;
-		$rating->restaurant_id = $request->id;
-		$restaurant->ratings()->save($rating);
+		$user_id = Like::find($restaurantId);
+		if (!$user_id) {
+			$rating = new \willvincent\Rateable\Rating;
+			$rating->user_id = auth()->user()->id;
+			$rating->restaurant_id = $request->id;
+			$rating->rating = $request->rate;
+			$restaurant->ratings()->save($rating);
+		}
 
 		return redirect()->back();
 	}
