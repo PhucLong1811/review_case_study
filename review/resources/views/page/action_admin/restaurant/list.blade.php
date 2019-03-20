@@ -1,5 +1,6 @@
 @extends('frontend.layout.admin.master')
 @section('contentadmin')
+<<<<<<< HEAD
 
 <table border="1">
 	<a href="{{route('create.Restaurant')}}">Create</a>
@@ -35,6 +36,8 @@
 	</tbody>
 </table>
 
+=======
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 <div class="container">
 	<div class="row col-md-11 col-md-offset-0 custyle">
 		<table class="table table-striped custab">
@@ -62,7 +65,7 @@
 					<td class="text-center">{{$res->address}}</td>
 					<td class="text-center">{{$res->status}}</td>
 					<td class="text-center">
-						<img src="{{ asset('storage/'.$res->image) }}" >
+						<img src="{{ asset('storage/'.$res->image) }}" width="100px" >
 					</td>
 					<td class="text-center"><a href="{{route('edit.Register' , $res->id) }}" class="btn btn-success text-center"><span class="pe-7s-pen"></span></a></td>
 					<td class="text-center"><a href="{{route('delete.Register' , $res->id) }}" class="btn btn-danger text-center"><span class="pe-7s-trash"></span></a></td>

@@ -1,5 +1,6 @@
 @extends('frontend.layout.admin.master')
 @section('contentadmin')
+<<<<<<< HEAD
 
 <table style="margin: 50px 500px;" border="1">
 	<a href="{{route('create.Category')}}">Create</a>
@@ -23,6 +24,8 @@
 	</tbody>
 </table>
 
+=======
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 <div class="container">
 	<div class="row col-md-9 col-md-offset-1 custyle">
 		<table class="table table-striped custab">
@@ -46,5 +49,8 @@
 		</table>
 	</div>
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 @endsection

@@ -23,38 +23,49 @@
 					</div>
 					<div class="space20">&nbsp;</div>
 					<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+<<<<<<< HEAD
 					<div class="clearfix"></div>
 				</div>
 				<form method="post" action="{{route('post.rating')}}" >
 					@csrf
 					<div class="card">
+=======
+					<form method="post" >
+						@csrf
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 						<div class="container-fliud">
 							<div class="wrapper row">
-
-								<div class="details col-md-6">
-
+								<div class="col-md-6">
 									<div class="rating">
 										<input id="input-1" name="rate" class="rating rating-loading" data-min="0" data-max="5" data-step="1"  data-size="xs">
-
 										<button type="submit" class="btn btn-success">Submit Review</button>
 									</div>
-
-
 								</div>
 							</div>
 						</div>
-					</div>
-				</form>
-
+					</form>
+					<div class="clearfix"></div>
+				</div>				
 			</div>
 		</div>
 	</div> <!-- #content -->
 </div> <!-- .container -->
 <div class="space40">&nbsp;</div>
+<<<<<<< HEAD
 
 
 <div class="well">
 	@include('page.action_admin.comment.create')
+=======
+<div class="container">
+	<div class="well">
+		@include('page.action_admin.comment.create')
+		@if(session('thongbao'))
+		{{session('thongbao')}}
+		@endif
+	</div>
+	
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 </div>
 @foreach($product->comments as $comment)
 <table border="1">
@@ -71,4 +82,9 @@
 @endforeach
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 @endsection

@@ -27,6 +27,7 @@ class commentController extends Controller {
 		return view('page.action_admin.restaurant.show');
 	}
 
+<<<<<<< HEAD
 	public function postComment(Request $request, $restaurantId) {
 
 		$comment = new Comment();
@@ -38,6 +39,36 @@ class commentController extends Controller {
 
 		return redirect()->back();
 	}
+=======
+use App\Restaurant;
+
+use Auth;
+
+class commentController extends Controller
+{
+    public function listComment()
+    {
+        $comment = Comment::all();
+
+        return view('page.action_admin.restaurant.show',compact('comment'));
+    }
+
+    public function createComment()
+    {
+        return view('page.action_admin.restaurant.show');
+    }
+
+    public function postComment(Request $request,$id)
+    {
+        $idrestaurant = $id;
+        $restaurant = Restaurant::find($id);
+        $comments->restaurant_id = $idrestaurant;
+        $comments->user_id = Auth()->user()->id;   
+        $comments->content = $request->comment;
+        $comments->save();
+        return redirect()->with('thongbao','thành công'); 
+    }
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 
 	/**
 	 * Display the specified resource.

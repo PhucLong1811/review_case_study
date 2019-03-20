@@ -11,6 +11,7 @@
 |
 <<<<<<< HEAD
  */
+<<<<<<< HEAD
 
 Route::get('/', 'pageController@index')->name('home');
 
@@ -28,12 +29,20 @@ Route::group(['prefix' => 'user'], function () {
 
 	});
 	Route::group(['prefix' => 'restaurant'], function () {
+=======
+
+
+Route::get('/','pageController@index')->name('home');
+
+Route::get('/home','pageController@homeadmin')->name('homeadmin');
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 
 		Route::get('/', 'restauController@createRest')->name('create.Restaurant');
 		Route::post('/create', 'restauController@postRest')->name('post.Restaurant');
 
 		Route::get('/list', 'restauController@listRest')->name('list.Restaurant');
 
+<<<<<<< HEAD
 		Route::get('show/{id}', 'restauController@showRest')->name('show.Restaurant');
 
 		Route::post('rating/', 'restauController@postPost')->name('post.rating');
@@ -44,6 +53,27 @@ Route::group(['prefix' => 'user'], function () {
 		Route::get('/list', 'commentController@listComment')->name('list.Comment');
 	});
 });
+=======
+Route::group(['prefix'=>'user'],function(){
+	Route::group(['prefix'=>'category'],function(){
+		Route::get('/','categoryController@createCate')->name('create.Category');
+		Route::post('/create','categoryController@postCate')->name('post.Category');
+		Route::get('/list','categoryController@listCate')->name('list.Category');
+	});	
+	Route::group(['prefix'=>'restaurant'],function(){
+		Route::get('/','restauController@createRest')->name('create.Restaurant');
+		Route::post('/create','restauController@postRest')->name('post.Restaurant');
+		Route::get('/list','restauController@listRest')->name('list.Restaurant');
+		Route::get('show/{id}','restauController@showRest')->name('show.Restaurant');
+		Route::post('show/{id}', 'restauController@postPost')->name('rating.Restaurant');
+	});
+	Route::group(['prefix'=>'comment'],function(){
+		Route::get('/','commentController@createComment')->name('create.Comment');
+		Route::post('/create/{id}','commentController@postComment')->name('post.Comment');
+		Route::get('/list','commentController@listComment')->name('list.Comment');
+	});
+});		
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 
 Route::group(['prefix' => 'login'], function () {
 	Route::get('/', 'registerController@Login')->name('Login');
@@ -69,3 +99,10 @@ Route::group(['prefix' => 'admin'], function () {
 	});
 
 });
+<<<<<<< HEAD
+=======
+/*});*/
+
+
+
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
