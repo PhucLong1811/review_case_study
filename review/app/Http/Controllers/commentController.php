@@ -21,19 +21,16 @@ class commentController extends Controller
         return view('page.action_admin.restaurant.show',compact('comment'));
     }
 
-    public function createComment()
-    {
-        return view('page.action_admin.restaurant.show');
-    }
 
-    public function postComment(Request $request,$id)
+
+    public function postComment(Request $request)
     {
-        $idrestaurant = $id;
-        $restaurant = Restaurant::find($id);
-        $comments->restaurant_id = $idrestaurant;
-        $comments->user_id = Auth()->user()->id;   
+        
+        $restaurant = Restaurant::find($request->id);
+        $comments->restaurant_id = $request->id;
+        $comments->user_id = auth()->user()->id;   
         $comments->content = $request->comment;
-        $comments->save();
+        $comments->comments()->save($comments);
         return redirect()->with('thongbao','thành công'); 
     }
 

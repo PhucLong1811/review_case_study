@@ -45,10 +45,19 @@
 <div class="space40">&nbsp;</div>
 <div class="container">
 	<div class="well">
-		@include('page.action_admin.comment.create')
+
 		@if(session('thongbao'))
 		{{session('thongbao')}}
 		@endif
+		<h5>Viết bình luận ... <span class="glyphicon glyphicon-pencil"></span></h5>
+		<form action="{{route('post.Comment')}}"  method="post" accept-charset="utf-8">
+			@csrf
+			<div class="form-group">
+				<textarea name="comment" rows="3" class="form-control"></textarea>
+			</div>
+			<button type="submit" class="btn btn-primary">Bình Luận</button>
+		</form>
+
 	</div>
 	
 </div>
