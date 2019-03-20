@@ -17,8 +17,7 @@ class CreateRatingsTable extends Migration {
 			$table->index('rateable_id')->default(1);
 			$table->index('rateable_type')->nullable();
 			$table->foreign('user_id')->references('id')->on('users');
-			$table->unsignedInteger('restaurant_id')->index();
-			$table->foreign('restaurant_id')->references('id')->on('restaurants');
+
 		});
 	}
 

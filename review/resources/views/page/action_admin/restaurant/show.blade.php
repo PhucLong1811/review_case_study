@@ -23,8 +23,16 @@
 					</div>
 					<div class="space20">&nbsp;</div>
 					<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+<<<<<<< HEAD
+					<div class="clearfix"></div>
+				</div>
+				<form method="post" action="{{route('post.rating')}}" >
+					@csrf
+					<div class="card">
+=======
 					<form method="post" >
 						@csrf
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 						<div class="container-fliud">
 							<div class="wrapper row">
 								<div class="col-md-6">
@@ -43,6 +51,12 @@
 	</div> <!-- #content -->
 </div> <!-- .container -->
 <div class="space40">&nbsp;</div>
+<<<<<<< HEAD
+
+
+<div class="well">
+	@include('page.action_admin.comment.create')
+=======
 <div class="container">
 	<div class="well">
 
@@ -60,8 +74,26 @@
 
 	</div>
 	
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 </div>
+@foreach($product->comments as $comment)
+<table border="1">
+
+	<tr>
+		<th>{{$comment->users->name}}</th>
+	</tr>
+	<tr>
+		<td>{{$comment->content}}</td>
+	</tr>
 
 
+</table>
+@endforeach
 
+
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 @endsection

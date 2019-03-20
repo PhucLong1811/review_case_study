@@ -11,18 +11,54 @@
 |
 <<<<<<< HEAD
  */
+<<<<<<< HEAD
+
+Route::get('/', 'pageController@index')->name('home');
+
+Route::get('/home', 'pageController@homeadmin')->name('homeadmin');
+
+Route::get('logout', 'pageController@LogoutUser')->name('LogoutUser');
+
+Route::get('search', 'pageController@search')->name('search');
+
+Route::group(['prefix' => 'user'], function () {
+	Route::group(['prefix' => 'category'], function () {
+		Route::get('/', 'categoryController@createCate')->name('create.Category');
+		Route::post('/create', 'categoryController@postCate')->name('post.Category');
+		Route::get('/list', 'categoryController@listCate')->name('list.Category');
+
+	});
+	Route::group(['prefix' => 'restaurant'], function () {
+=======
 
 
 Route::get('/','pageController@index')->name('home');
 
 Route::get('/home','pageController@homeadmin')->name('homeadmin');
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 
-Route::get('logout','pageController@LogoutUser')->name('LogoutUser');
+		Route::get('/', 'restauController@createRest')->name('create.Restaurant');
+		Route::post('/create', 'restauController@postRest')->name('post.Restaurant');
 
-Route::get('search','pageController@search')->name('search');
+		Route::get('/list', 'restauController@listRest')->name('list.Restaurant');
 
+<<<<<<< HEAD
+		Route::get('show/{id}', 'restauController@showRest')->name('show.Restaurant');
+
+<<<<<<< HEAD
 Route::get('show/{id}','restauController@showRest')->name('show.Restaurant');
 
+=======
+		Route::post('rating/', 'restauController@postPost')->name('post.rating');
+	});
+	Route::group(['prefix' => 'comment'], function () {
+		Route::get('/', 'commentController@createComment')->name('create.Comment');
+		Route::post('/create/{id}', 'commentController@postComment')->name('post.Comment');
+		Route::get('/list', 'commentController@listComment')->name('list.Comment');
+	});
+});
+=======
+>>>>>>> bda1ab1d7d145bd7c245f7b0e81d5a3fa176ef56
 Route::group(['prefix'=>'user'],function(){
 	Route::group(['prefix'=>'category'],function(){
 		Route::get('/','categoryController@createCate')->name('create.Category');
@@ -42,6 +78,7 @@ Route::group(['prefix'=>'user'],function(){
 		Route::get('/list','commentController@listComment')->name('list.Comment');
 	});
 });		
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 
 Route::group(['prefix' => 'login'], function () {
 	Route::get('/', 'registerController@Login')->name('Login');
@@ -68,6 +105,13 @@ Route::group(['middleware'=>'adminLogin'],function(){
 
 	});
 });
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+/*});*/
+>>>>>>> bda1ab1d7d145bd7c245f7b0e81d5a3fa176ef56
 
 
 
+>>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
