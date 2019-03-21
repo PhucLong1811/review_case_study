@@ -32,12 +32,12 @@
 
 <body>
   <div class="wrapper">
-    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
+    <div class="sidebar" data-color="blue" data-image="assets/img/sidebar-5.jpg">
       <div class="sidebar-wrapper">
         <div class="logo">
           @if(Auth::check())
           <a href="http://www.creative-tim.com" class="simple-text">
-            {{Auth::user()->image}}
+            <img src="{{asset('storage/'.Auth::user()->image) }}"  style="width: 200px; height: 114px; margin: 1px; border-radius: 5px;">
           </a>
         </div>
         @endif
@@ -194,7 +194,7 @@
   $(document).ready(function(){
    demo.initChartist();
    $.notify({
-    icon: 'pe-7s-gift',message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."},{type: 'info',timer: 4000
+   message: "Welcome"},{type: 'info',timer: 4000
   });
  });
 </script>

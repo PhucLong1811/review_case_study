@@ -177,12 +177,10 @@ return [
 
         willvincent\Rateable\RateableServiceProvider::class,
 
-<<<<<<< HEAD
-        
-=======
+
         /*willvincent\Rateable\RateableServiceProvider::class,*/
 
->>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
+
 
     ],
 

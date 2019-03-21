@@ -28,7 +28,7 @@ class sliderController extends Controller
 
     public function listSlide()
     {
-        $slide = Slide::paginate(4);
+        $slide = Slide::all();
         return view('page.action_admin.slide.list',compact('slide'));
     }
 

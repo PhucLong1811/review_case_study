@@ -10,13 +10,15 @@ use Auth;
 
 use Hash;
 
+use App\Category;
+
 
 class registerController extends Controller
 {
     public function Login()
     {
-
-         return view('page.login.login');
+        $category = Category::all();
+         return view('page.login.login',compact('category'));
     }
 
     public function postLogin(Request $request)
@@ -42,7 +44,8 @@ class registerController extends Controller
 
     public function createRegister()
     {
-        return view('page.register.create');
+        $category = Category::all();
+        return view('page.register.create',compact('category'));
     }
 
     public function postRegister(Request $request)
@@ -109,6 +112,7 @@ class registerController extends Controller
        $user->address = $request->address;
        /* $user->gender = $request->gender;*/
        $user->DOB = $request->DOB;
+       $user->level = $request->level;
        if ($request->hasFile('image')) 
        {
         $image = $request->file('image');

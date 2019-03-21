@@ -78,7 +78,7 @@
 						<label for="phone">DOB</label>
 						<input type="date" id="email" name="DOB" required>
 					</div>
-					<div class="form-block">
+<div class="form-block">
 						<label for="phone">Quyền</label>
 						<input type="number" id="phone" name="level" required>
 					</div>

@@ -23,16 +23,10 @@
 					</div>
 					<div class="space20">&nbsp;</div>
 					<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-<<<<<<< HEAD
-					<div class="clearfix"></div>
-				</div>
-				<form method="post" action="{{route('post.rating')}}" >
-					@csrf
-					<div class="card">
-=======
+
 					<form method="post" >
 						@csrf
->>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
+
 						<div class="container-fliud">
 							<div class="wrapper row">
 								<div class="col-md-6">
@@ -51,49 +45,27 @@
 	</div> <!-- #content -->
 </div> <!-- .container -->
 <div class="space40">&nbsp;</div>
-<<<<<<< HEAD
-
-
-<div class="well">
-	@include('page.action_admin.comment.create')
-=======
 <div class="container">
 	<div class="well">
-
-		@if(session('thongbao'))
-		{{session('thongbao')}}
-		@endif
-		<h5>Viết bình luận ... <span class="glyphicon glyphicon-pencil"></span></h5>
-		<form action="{{route('post.Comment')}}"  method="post" accept-charset="utf-8">
-			@csrf
-			<div class="form-group">
-				<textarea name="comment" rows="3" class="form-control"></textarea>
-			</div>
-			<button type="submit" class="btn btn-primary">Bình Luận</button>
-		</form>
-
+		@include('page.action_admin.comment.create')
 	</div>
-	
->>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
+</div>	
+<div class="container">
+	@foreach($product->comments as $comment)
+	<table >
+		<tr>
+			<th>{{$comment->users->name}}</th>
+
+		</tr>
+		<tr>
+			<td>{{$comment->content}}</td>
+		</tr>
+		<tr>
+			<td>{{$comment->users->created_at}} </td>
+		<hr>
+		</tr>
+
+	</table>
+	@endforeach
 </div>
-@foreach($product->comments as $comment)
-<table border="1">
-
-	<tr>
-		<th>{{$comment->users->name}}</th>
-	</tr>
-	<tr>
-		<td>{{$comment->content}}</td>
-	</tr>
-
-
-</table>
-@endforeach
-
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
 @endsection

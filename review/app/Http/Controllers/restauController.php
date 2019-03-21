@@ -13,6 +13,11 @@ class restauController extends Controller {
 		$this->middleware('auth');
 	}
 
+	public function favorite()
+	{
+		
+	}
+
 	public function listRest() {
 		$restaurant = Restaurant::all();
 		return view('page.action_admin.restaurant.list', compact('restaurant'));
@@ -43,21 +48,22 @@ class restauController extends Controller {
 
 	public function showRest($id) {
 		$product = Restaurant::find($id);
-		return view('page.action_admin.restaurant.show', compact('product'));
+		$category = Category::all();
+		return view('page.action_admin.restaurant.show', compact('product','category'));
 	}
 
-<<<<<<< HEAD
-	public function postPost(Request $request) {
-		request()->validate(['rate' => 'required']);
-		$user_id = Like::find($restaurantId);
-		if (!$user_id) {
-			$rating = new \willvincent\Rateable\Rating;
-			$rating->user_id = auth()->user()->id;
-			$rating->restaurant_id = $request->id;
-			$rating->rating = $request->rate;
-			$restaurant->ratings()->save($rating);
-		}
-=======
+
+	// public function postPost(Request $request) {
+	// 	request()->validate(['rate' => 'required']);
+	// 	$user_id = Like::find($restaurantId);
+	// 	if (!$user_id) {
+	// 		$rating = new \willvincent\Rateable\Rating;
+	// 		$rating->user_id = auth()->user()->id;
+	// 		$rating->restaurant_id = $request->id;
+	// 		$rating->rating = $request->rate;
+	// 		$restaurant->ratings()->save($rating);
+	// 	}
+
 	public function postPost(Request $request, $id)
 	{
 		request()->validate(['rate' => 'required']);
@@ -67,7 +73,7 @@ class restauController extends Controller {
 		$rating->user_id = Auth()->user()->id;
 		$rating->restaurant_id = $request->id;
 		$restaurant->ratings()->save($rating);
->>>>>>> 676f2570b296acbe8a1185a89ac25ed859b85842
+
 
 		return redirect()->back();
 	}

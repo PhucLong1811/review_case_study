@@ -66,6 +66,10 @@
 						<input type="date" id="phone" name="DOB" required value="{{$user->DOB}}">
 					</div>
 					<div class="form-block">
+						<label for="level">level</label>
+						<input type="number" id="phone" name="level" required value="{{$user->level}}">
+					</div>
+					<div class="form-block">
 						<label for="phone">image</label>
 						<input type="file" id="phone" name="image" required>
 					</div>

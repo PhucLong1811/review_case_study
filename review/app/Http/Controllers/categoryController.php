@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Restaurant;
 use Illuminate\Http\Request;
 
 class categoryController extends Controller {
@@ -28,7 +29,11 @@ class categoryController extends Controller {
 	}
 
 	public function show($id) {
-		//
+		$categories_id=$id;
+		$category = Category::all();
+		$restaurant = Restaurant::findOrFail($categories_id)->get();
+		return view('page.user.category',compact('category','restaurant','categories_id'));
+
 	}
 
 	public function edit($id) {

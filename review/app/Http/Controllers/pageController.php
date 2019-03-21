@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Restaurant;
 use App\Slide;
 use Auth;
+use App\Category;
 use Illuminate\Http\Request;
 
 class pageController extends Controller {
@@ -16,19 +17,12 @@ class pageController extends Controller {
 	public function index() {
 		$slide = Slide::all();
 		$restaurant = Restaurant::all();
-		return view('page.user.home', compact('slide', 'restaurant'));
+		$category = Category::all();
+		return view('page.user.home', compact('slide', 'restaurant','category'));
 	}
 
-	public function homeadmin() {
-		return redirect()->route('list.Register');
-	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @return \Illuminate\Http\Response
-	 */
+
 	public function LogoutUser() {
 		Auth::logout();
 		return redirect()->route('home');
@@ -36,7 +30,8 @@ class pageController extends Controller {
 
 	public function search(Request $request) {
 		$product = Restaurant::where('name', 'like', '%' . $request->key . '%')->get();
-		return view('page.user.search', compact('product'));
+		$category=Category::all();
+		return view('page.user.search', compact('product','category'));
 	}
 
 	public function show($id) {
