@@ -14,7 +14,7 @@ class User extends Authenticatable
 		return $this->hasMany('App\Comment');
 	}
 	public function restaurants() {
-		return $this->belongsMany('App\Restaurant');
+		return $this->belongsToMany('App\Restaurant','restaurants_have_users');
 	}
 	public function ratings() {
 		return $this->hasOne('App\Rating');

@@ -15,7 +15,7 @@ class RestaurantsHasUsers extends Migration {
 			$table->increments('id');
 		});
 		Schema::table('restaurants_have_users', function (Blueprint $table) {
-			$table->unsignedInteger('restaurant_id')->after('id')->nullable();
+			$table->unsignedInteger('restaurant_id')->after('id')->nullable()->onDelete('cascade');
 			$table->foreign('restaurant_id')->references('id')->on('restaurants');
 		});
 		Schema::table('restaurants_have_users', function (Blueprint $table) {

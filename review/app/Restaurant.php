@@ -13,10 +13,10 @@ class Restaurant extends Model {
 		return $this->belongsTo('App\Category', 'categories_id');
 
 	}
-	public function users() 
-	{
-		return $this->belongsMany('App\User');
+	public function user() {
+		return $this->belongsToMany('App\User','restaurants_have_users');
 	}
+
 	public function comments() 
 	{
 

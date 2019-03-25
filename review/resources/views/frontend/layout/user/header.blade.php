@@ -43,46 +43,40 @@
 
         <div class="beta-comp">
           <div class="cart">
-            <div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống) <i class="fa fa-chevron-down"></i></div>
-            <div class="beta-dropdown cart-body">
-              <div class="cart-item">
-                <div class="media">
-                  <a class="pull-left" href="#"><img src="../source/assets/dest/images/products/cart/1.png" alt=""></a>
-                  <div class="media-body">
-                    <span class="cart-item-title">Sample Woman Top</span>
-                    <span class="cart-item-options">Size: XS; Colar: Navy</span>
-                    <span class="cart-item-amount">1*<span>$49.50</span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- .cart -->
+            <a href="{{route('show.Favorite')}}" >
+              <span class="fa fa-heart text-danger"></span> Yêu Thích
+              @if(Auth::check())
+              @if(count(auth()->user()->restaurants) > 0)
+              {{count(auth()->user()->restaurants)}}
+              @endif
+              @endif
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="clearfix"></div>
-    </div> <!-- .container -->
-  </div> <!-- .header-body -->
-  <div class="header-bottom" style="background-color: #0277b8;">
-    <div class="container">
-      <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
-      <div class="visible-xs clearfix"></div>
-      <nav class="main-menu">
-        <ul class="l-inline ov">
-          <li><a href="{{route('home')}}">Trang chủ</a></li>
-          <li><a href="#">Sản phẩm</a>
-
-            <ul class="sub-menu">
-              @foreach($category as $cate)
-              <li><a href="{{route('show.List',$cate->id)}}">{{$cate->name}}</a></li>
-              @endforeach
-            </ul>
-
-          </li>
-          <li><a href="about.html">Giới thiệu</a></li>
-          <li><a href="contacts.html">Liên hệ</a></li>
-        </ul>
         <div class="clearfix"></div>
-      </nav>
-    </div> <!-- .container -->
-  </div> <!-- .header-bottom -->
+      </div> <!-- .container -->
+    </div> <!-- .header-body -->
+    <div class="header-bottom" style="background-color: #0277b8;">
+      <div class="container">
+        <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
+        <div class="visible-xs clearfix"></div>
+        <nav class="main-menu">
+          <ul class="l-inline ov">
+            <li><a href="{{route('home')}}">Trang chủ</a></li>
+            <li><a href="#">Sản phẩm</a>
+
+              <ul class="sub-menu">
+                @foreach($category as $cate)
+                <li><a href="{{route('show.List',$cate->id)}}">{{$cate->name}}</a></li>
+                @endforeach
+              </ul>
+
+            </li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="contacts.html">Liên hệ</a></li>
+          </ul>
+          <div class="clearfix"></div>
+        </nav>
+      </div> <!-- .container -->
+    </div> <!-- .header-bottom -->
   </div> <!-- #header -->

@@ -66,8 +66,10 @@ class sliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delSlide($id)
     {
-        //
+        $slide = Slide::find($id);
+        $slide->delete();
+        return redirect()->route('list.Slide');
     }
 }

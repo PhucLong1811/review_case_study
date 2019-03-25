@@ -55,7 +55,7 @@
                                         <input id="input-1" name="input-1" class="rating rating-loading"  data-min="0" data-max="5" data-step="0.1" value="" data-size="xs" disabled="">
                                     </td>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="{{route('favorite',$res->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="add-to-cart pull-left" href="{{route('favorite',$res->id)}}"><i class="fa fa-heart "></i></a>
                                         <a class="beta-btn primary" href="{{route('show.Restaurant',$res->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>

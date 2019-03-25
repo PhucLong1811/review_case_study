@@ -22,7 +22,7 @@
 					<td class="text-center">
 						{{$ca->name}}
 					</td>
-					<td class="text-center"><a href="#" class="btn btn-success text-center"><span class="pe-7s-pen"></span></a></td>
+					<td class="text-center"><a href="{{route('edit.Category',$ca->id)}}" class="btn btn-success text-center"><span class="pe-7s-pen"></span></a></td>
 					<td class="text-center"><a href="#" class="btn btn-danger text-center"><span class="pe-7s-trash"></span></a></td>
 				</tr>
 				@endforeach

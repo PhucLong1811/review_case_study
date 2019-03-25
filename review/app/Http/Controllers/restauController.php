@@ -5,6 +5,7 @@ use App\Comment;
 use App\Category;
 use App\Rating;
 use App\Restaurant;
+use App\User;
 use Illuminate\Http\Request;
 
 class restauController extends Controller {
@@ -13,11 +14,30 @@ class restauController extends Controller {
 		$this->middleware('auth');
 	}
 
-	public function favorite()
+	public function favorite( $id)
 	{
-		
+		$user = Auth()->user();
+		$restaurant= Restaurant::findOrFail($id);
+		$user->restaurants()->attach($restaurant);
+		 return redirect()->route('home');
 	}
+	public function showfavorite()
+	{
+		$user = auth()->user();
+		$category = Category::all();    
+       $restaurants = $user->restaurants;
+       return view('page.user.favorite',compact('restaurants','category'));
+	}
+	
+	public function deleteFravorite($id)
+	{
+		$user = Auth()->user();
+		$restaurant= Restaurant::findOrFail($id);
+		$user->restaurants()->detach($restaurant);
+		return redirect()->route('home');
 
+	}
+	
 	public function listRest() {
 		$restaurant = Restaurant::all();
 		return view('page.action_admin.restaurant.list', compact('restaurant'));

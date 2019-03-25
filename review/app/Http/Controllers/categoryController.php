@@ -7,11 +7,7 @@ use App\Restaurant;
 use Illuminate\Http\Request;
 
 class categoryController extends Controller {
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
+
 	public function listCate() {
 		$cate = Category::all();
 		return view('page.action_admin.category.list', compact('cate'));
@@ -36,12 +32,18 @@ class categoryController extends Controller {
 
 	}
 
-	public function edit($id) {
-		//
+	public function editCate($id) 
+	{
+		$categories = Category::find($id);
+		return view('page.action_admin.category.edit',compact('categories'));
 	}
 
-	public function update(Request $request, $id) {
-		//
+	public function updateCate(Request $request, $id) 
+	{
+		$categories = Category::find($id);
+		$categories->name = $request->name;
+		$categories->save();
+		return redirect()->route('list.Category');
 	}
 
 	public function destroy($id) {

@@ -62,7 +62,10 @@
 		</tr>
 		<tr>
 			<td>{{$comment->users->created_at}} </td>
-		<hr>
+		</tr>
+		<tr>
+			<td><a href="{{route('edit.Comment',$comment->id)}}">Edit</a></td>
+			<hr>
 		</tr>
 
 	</table>

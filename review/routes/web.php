@@ -25,13 +25,23 @@ Route::group(['prefix' => 'login'], function () {
 
 Route::group(['prefix'=>'user'],function(){
 	Route::get('search', 'pageController@search')->name('search');
+
+	Route::get('edit_Comment/{id}', 'commentController@editComment')->name('edit.Comment');
+	Route::post('edit_Comment/{id}', 'commentController@updateComment')->name('update.Comment');
 	Route::get('/comment', 'commentController@createComment')->name('create.Comment');
 	Route::post('/comment/{id}', 'commentController@postComment')->name('post.Comment');
+
 	Route::post('show/{id}', 'restauController@postPost')->name('rating.Restaurant');
+
 	Route::get('show/{id}', 'restauController@showRest')->name('show.Restaurant');
+
 	Route::get('logout', 'pageController@LogoutUser')->name('LogoutUser');
+
 	Route::get('{id}/show','categoryController@show')->name('show.List');
-	Route::post('favorite/{id}','restauController@favorite')->name('favorite');
+
+	Route::get('favorite/{id}','restauController@favorite')->name('favorite');
+	Route::get('showFavorite','restauController@showfavorite')->name('show.Favorite');
+	Route::get('deleteFravorite/{id}','restauController@deleteFravorite')->name('del.Favorite');
 });		
 
 Route::group(['middleware'=>'adminLogin'],function(){
@@ -40,6 +50,7 @@ Route::group(['middleware'=>'adminLogin'],function(){
 			Route::get('/create', 'sliderController@createSlide')->name('create.Slide');
 			Route::post('/create', 'sliderController@postSlide')->name('post.Slide');
 			Route::get('/list', 'sliderController@listSlide')->name('list.Slide');
+			Route::get('delLis/{id}','sliderController@delSlide')->name('del.Slide');
 		});
 		Route::group(['prefix' => 'register'], function () {
 			Route::get('/list', 'registerController@listRegister')->name('list.Register');
@@ -56,6 +67,9 @@ Route::group(['middleware'=>'adminLogin'],function(){
 			Route::get('/','categoryController@createCate')->name('create.Category');
 			Route::post('/create','categoryController@postCate')->name('post.Category');
 			Route::get('/list','categoryController@listCate')->name('list.Category');
+			Route::get('edit/{id}','categoryController@editCate')->name('edit.Category');
+			Route::post('update/{id}','categoryController@updateCate')->name('update.Category');
+
 		});
 		Route::get('/list', 'commentController@listComment')->name('list.Comment');
 	});

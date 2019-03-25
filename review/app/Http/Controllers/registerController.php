@@ -33,12 +33,14 @@ class registerController extends Controller
         }else if (Auth::attempt(['email'=>$request->email,'password'=>$request->password,'level'=>'0'])){
             return redirect()->route('home');
         }
+        return redirect()->route('home');
     }
 
      public function LogoutAdmin()
     {
         Auth::logout();
-         return view('page.login.login');
+        $category = Category::all();
+         return view('page.login.login',compact('category'));
     }
     
 
